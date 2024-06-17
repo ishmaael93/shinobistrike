@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'bicubik';
+    src: url('./assets/fonts/Bicubik.OTF');
+}
+@font-face {
+    font-family: 'akony';
+    src: url('./assets/fonts/akony.otf');
+}
+
+@keyframes click-scale-down {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.click-animation {
+    animation: click-scale-down 0.3s ease-in-out;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+.float-up {
+    animation: float-up 1s ease-in-out forwards;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: red;
+    pointer-events: none;
+}
