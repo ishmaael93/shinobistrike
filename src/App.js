@@ -1,23 +1,37 @@
+import React from 'react';
 import Logoname from "./components/logoname";
-import Stats from "./components/stats";
-import Balance from "./components/balance";
-import ProgressBar from "./components/progressBar";
-import Cointap from "./components/cointap";
+import Progressbar from "./components/user/progressbar";
+import Balance from "./components/user/balance";
+import EmblaCarousel from './components/carusel/EmblaCarousel'
 import Menu from "./components/menu";
-import React from "react";
+import AnimationVisible from "./components/animationVisible";
+import Cointap from "./components/cointap";
 
+const OPTIONS = { axis: 'y' }
+const SLIDE_COUNT = 3
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 function App() {
+
   return (
-      <div>
-        <Logoname />
-          <div className="bg-black shadow-custom-shadow rounded-t-[20px]">
-            <Stats />
-              <Balance />
-              <ProgressBar />
-              <Cointap />
-              <Menu />
+      <div className="flex flex-col justify-between h-full">
+
+          <AnimationVisible/>
+          <div className="mx-[30px] pt-[30px] animation_visible">
+              <Logoname/>
+              <div className="flex items-center space-x-[30px] mt-[30px]">
+                  <Progressbar/>
+                  <Balance/>
+              </div>
           </div>
+          <div id="carusel" className="animation_visible">
+              <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
+              {/*<Cointap/>*/}
+          </div>
+          <div className="animation_visible">
+              <Menu/>
+          </div>
+
       </div>
     // <div className="App">
     //   <header className="App-header">
@@ -37,5 +51,4 @@ function App() {
     // </div>
   );
 }
-
 export default App;

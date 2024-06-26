@@ -13,7 +13,7 @@ function Cointap() {
 
         const rect = e.target.getBoundingClientRect();
         const x = e.clientX - rect.left;
-        const y = e.clientY - 150;
+        const y = e.clientY - 400;
 
         const newClick = { id: Date.now(), x, y };
         setClicks([...clicks, newClick]);
